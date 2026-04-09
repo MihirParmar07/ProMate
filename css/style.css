@@ -4,6 +4,9 @@ font-family:Arial, Helvetica, sans-serif;
 background:#f5f7fb;
 color:#1a1a1a;
 overflow-x:hidden;
+
+/* FIX: navbar overlap avoid */
+padding-top:70px;
 }
 
 .navbar{
@@ -51,11 +54,11 @@ color:#08aae0;
 /* HERO */
 
 .hero{
-height:100vh;
+/* FIX: height remove */
+min-height:100vh;
 display:flex;
 align-items:center;
-padding-left:100px;
-padding-top:80px;
+padding:120px 100px 60px; /* FIX spacing */
 background:linear-gradient(135deg,#08aae0,#4facfe);
 color:white;
 }
@@ -272,4 +275,112 @@ transition:0.3s;
 form button:hover{
 background:#0693c2;
 transform:translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 992px){
+
+.hero{
+padding:120px 40px 60px;
+}
+
+.hero h2{
+font-size:42px;
+}
+
+.services{
+padding:80px 40px;
+}
+
+.navbar{
+padding:12px 20px;
+}
+
+}
+
+/* Mobile */
+@media (max-width: 600px){
+
+.navbar{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+padding:12px 15px;
+}
+
+nav{
+flex-wrap:wrap;
+}
+
+nav a{
+margin:5px 10px 0 0;
+}
+
+/* HERO FIX MAIN */
+.hero{
+flex-direction:column;
+justify-content:center;
+padding:140px 20px 60px; /* IMPORTANT FIX */
+text-align:center;
+}
+
+.hero-content{
+max-width:100%;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.cta-btn{
+width:100%;
+}
+
+.services{
+padding:60px 20px;
+}
+
+.services h2{
+font-size:26px;
+}
+
+.card{
+padding:20px;
+}
+
+.grid{
+gap:20px;
+}
+
+.price-card{
+padding:30px 20px;
+}
+
+.cta{
+padding:80px 20px;
+}
+
+}
+
+/* Extra Small */
+@media (max-width: 400px){
+
+.hero h2{
+font-size:24px;
+}
+
+.logo{
+font-size:18px;
+}
+
+nav a{
+font-size:13px;
+}
+
 }
